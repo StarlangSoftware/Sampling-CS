@@ -10,3 +10,4 @@ obj/
 .idea/.idea.Sampling/.idea/vcs.xml
 Sampling.csproj
 Sampling.sln
+/Sampling.sln.DotSettings.user
