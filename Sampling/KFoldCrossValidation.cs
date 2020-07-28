@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Sampling
@@ -7,6 +8,18 @@ namespace Sampling
         private readonly List<T> _instanceList;
         private readonly int _n;
 
+        public static void Shuffle(List<T> list, Random random)  
+        {  
+            var n = list.Count;  
+            while (n > 1) {  
+                n--;  
+                var k = random.Next(n + 1);  
+                var value = list[k];  
+                list[k] = list[n];  
+                list[n] = value;  
+            }  
+        }
+        
         /**
          * <summary>A constructor of {@link KFoldCrossValidation} class which takes a sample as an array of instances, a K (K in K-fold cross-validation) and a seed number,
          * then shuffles the original sample using this seed as random number.</summary>
@@ -17,6 +30,7 @@ namespace Sampling
          */
         public KFoldCrossValidation(List<T> instanceList, int K, int seed){
             this._instanceList = instanceList;
+            Shuffle(this._instanceList, new Random(seed));
             _n = instanceList.Count;
             this.K = K;
         }

@@ -25,7 +25,7 @@ namespace Test
         public void TestSmallSample10Fold()
         {
             var kFoldCrossValidation = new KFoldCrossValidation<string>(smallSample, 10, 1);
-            string[] expected1 = {"1"};
+            string[] expected1 = {"7"};
             Assert.AreEqual(expected1, kFoldCrossValidation.GetTestFold(0).ToArray());
         }
 
@@ -33,7 +33,7 @@ namespace Test
         public void TestSmallSample5Fold()
         {
             var kFoldCrossValidation = new KFoldCrossValidation<string>(smallSample, 5, 1);
-            string[] expected2 = {"1", "2"};
+            string[] expected2 = {"7", "9"};
             Assert.AreEqual(expected2, kFoldCrossValidation.GetTestFold(0).ToArray());
         }
 
@@ -41,7 +41,7 @@ namespace Test
         public void TestSmallSample2Fold()
         {
             var kFoldCrossValidation = new KFoldCrossValidation<string>(smallSample, 2, 1);
-            string[] expected3 = {"1", "2", "3", "4", "5"};
+            string[] expected3 = {"7", "9", "5", "2", "10"};
             Assert.AreEqual(expected3, kFoldCrossValidation.GetTestFold(0).ToArray());
         }
 

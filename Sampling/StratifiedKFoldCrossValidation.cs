@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Sampling
@@ -19,6 +20,7 @@ namespace Sampling
             this._instanceLists = instanceLists;
             _n = new int[instanceLists.Length];
             for (var i = 0; i < instanceLists.Length; i++){
+                KFoldCrossValidation<T>.Shuffle(_instanceLists[i], new Random(seed));
                 _n[i] = instanceLists[i].Count;
             }
             this.K = K;

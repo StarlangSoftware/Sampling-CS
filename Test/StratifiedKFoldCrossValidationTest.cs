@@ -52,7 +52,7 @@ namespace Test
         {
             var stratifiedKFoldCrossValidation =
                 new StratifiedKFoldCrossValidation<string>(smallSample, 10, 1);
-            string[] expected1 = {"1", "11", "12"};
+            string[] expected1 = {"7", "20", "26"};
             Assert.AreEqual(expected1, stratifiedKFoldCrossValidation.GetTestFold(0).ToArray());
         }
 
@@ -61,7 +61,7 @@ namespace Test
         {
             var stratifiedKFoldCrossValidation =
                 new StratifiedKFoldCrossValidation<string>(smallSample, 5, 1);
-            string[] expected2 = {"1", "2", "11", "12", "13", "14"};
+            string[] expected2 = {"7", "9", "20", "26", "16", "22"};
             Assert.AreEqual(expected2, stratifiedKFoldCrossValidation.GetTestFold(0).ToArray());
         }
 
@@ -70,7 +70,7 @@ namespace Test
         {
             var stratifiedKFoldCrossValidation =
                 new StratifiedKFoldCrossValidation<string>(smallSample, 2, 1);
-            string[] expected3 = {"1", "2", "3", "4", "5", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+            string[] expected3 = {"7", "9", "5", "2", "10", "20", "26", "16", "22", "14", "27", "25", "28", "29", "11"};
             Assert.AreEqual(expected3, stratifiedKFoldCrossValidation.GetTestFold(0).ToArray());
         }
 
@@ -90,7 +90,7 @@ namespace Test
                 Assert.AreEqual(8100, trainFold.Count);
                 Assert.AreEqual(9000, items.Count);
                 var trainCounts = new int[3];
-                foreach (int integer in trainFold) {
+                foreach (var integer in trainFold) {
                     if (integer < 1000)
                     {
                         trainCounts[0]++;
@@ -111,7 +111,7 @@ namespace Test
                 Assert.AreEqual(2700, trainCounts[1]);
                 Assert.AreEqual(4500, trainCounts[2]);
                 var testCounts = new int[3];
-                foreach (int integer in testFold) {
+                foreach (var integer in testFold) {
                     if (integer < 1000)
                     {
                         testCounts[0]++;
@@ -151,7 +151,7 @@ namespace Test
                 Assert.AreEqual(7200, trainFold.Count);
                 Assert.AreEqual(9000, items.Count);
                 var trainCounts = new int[3];
-                foreach (int integer in trainFold) {
+                foreach (var integer in trainFold) {
                     if (integer < 1000)
                     {
                         trainCounts[0]++;
@@ -172,7 +172,7 @@ namespace Test
                 Assert.AreEqual(2400, trainCounts[1]);
                 Assert.AreEqual(4000, trainCounts[2]);
                 var testCounts = new int[3];
-                foreach (int integer in testFold) {
+                foreach (var integer in testFold) {
                     if (integer < 1000)
                     {
                         testCounts[0]++;
@@ -212,7 +212,7 @@ namespace Test
                 Assert.AreEqual(4500, trainFold.Count);
                 Assert.AreEqual(9000, items.Count);
                 var trainCounts = new int[3];
-                foreach (int integer in trainFold) {
+                foreach (var integer in trainFold) {
                     if (integer < 1000)
                     {
                         trainCounts[0]++;
@@ -233,7 +233,7 @@ namespace Test
                 Assert.AreEqual(1500, trainCounts[1]);
                 Assert.AreEqual(2500, trainCounts[2]);
                 var testCounts = new int[3];
-                foreach (int integer in testFold) {
+                foreach (var integer in testFold) {
                     if (integer < 1000)
                     {
                         testCounts[0]++;
