@@ -13,17 +13,17 @@ namespace Sampling
          * then shuffles each class sample using the seed number.</summary>
          *
          * <param name="instanceLists">Original class samples. Each element of the this array is a sample only from one class.</param>
-         * <param name="K">K in K-fold cross-validation</param>
+         * <param name="k">K in K-fold cross-validation</param>
          * <param name="seed">Random number to create K-fold sample(s)</param>
          */
-        public StratifiedKFoldCrossValidation(List<T>[] instanceLists, int K, int seed){
+        public StratifiedKFoldCrossValidation(List<T>[] instanceLists, int k, int seed){
             this._instanceLists = instanceLists;
             _n = new int[instanceLists.Length];
             for (var i = 0; i < instanceLists.Length; i++){
                 KFoldCrossValidation<T>.Shuffle(_instanceLists[i], new Random(seed));
                 _n[i] = instanceLists[i].Count;
             }
-            this.K = K;
+            this.K = k;
         }
 
         /**

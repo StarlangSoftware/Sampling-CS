@@ -25,14 +25,14 @@ namespace Sampling
          * then shuffles the original sample using this seed as random number.</summary>
          *
          * <param name="instanceList">Original sample</param>
-         * <param name="K">K in K-fold cross-validation</param>
+         * <param name="k">K in K-fold cross-validation</param>
          * <param name="seed">Random number to create K-fold sample(s)</param>
          */
-        public KFoldCrossValidation(List<T> instanceList, int K, int seed){
+        public KFoldCrossValidation(List<T> instanceList, int k, int seed){
             this._instanceList = instanceList;
             Shuffle(this._instanceList, new Random(seed));
             _n = instanceList.Count;
-            this.K = K;
+            this.K = k;
         }
 
         /**
