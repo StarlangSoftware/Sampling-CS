@@ -8,6 +8,12 @@ namespace Sampling
         private readonly List<T> _instanceList;
         private readonly int _n;
 
+        /// <summary>
+        /// Shuffle method for shuffling a list of objects. The method uses simple and effective shuffle method with
+        /// equal probabilities to every one of N! possibilities.
+        /// </summary>
+        /// <param name="list">List of objects to shuffle</param>
+        /// <param name="random">Random number generator used in shuffling</param>
         public static void Shuffle(List<T> list, Random random)  
         {  
             var n = list.Count;  
