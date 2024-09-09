@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
         <PackageId>NlpToolkit-Sampling</PackageId>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageVersion>1.0.3</PackageVersion>
         <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicenseUrl>
+        <TargetFrameworks>netcoreapp3.1;net8.0</TargetFrameworks>
     </PropertyGroup>
 
 </Project>
